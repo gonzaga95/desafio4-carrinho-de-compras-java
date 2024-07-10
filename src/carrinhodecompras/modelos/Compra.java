@@ -1,6 +1,6 @@
 package carrinhodecompras.modelos;
 
-public class Compra {
+public class Compra implements Comparable<Compra> {
     private String produto;
     private double valor;
 
@@ -20,5 +20,9 @@ public class Compra {
     @Override
     public String toString() {
         return "Compra: \nProduto: " + produto + "\nValor: " + valor;
+    }
+
+    public int compareTo(Compra outraCompra) {
+        return Double.valueOf(this.valor).compareTo(Double.valueOf(outraCompra.valor));
     }
 }

@@ -1,5 +1,6 @@
 package carrinhodecompras.modelos;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Menu {
@@ -54,5 +55,13 @@ public class Menu {
         } while (opcao != 9);
 
         scanner.close();
+
+        System.out.println("***********************");
+        System.out.println("COMPRAS REALIZADAS:\n");
+        Collections.sort(cartao.getCompras());
+        for (Compra c : cartao.getCompras()) {
+            System.out.println(c.getProduto() + " - " +c.getValor());
+        }
+        System.out.println("\n***********************");
     }
 }
